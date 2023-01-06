@@ -39,6 +39,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		846939002968890D00AFEC12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84C5B0D22965C89400716565 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		846939012968892300AFEC12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84C5B0E82965DD1200716565 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		84C5B0C22965C89400716565 = {
 			isa = PBXGroup;
 			children = (
@@ -67,9 +83,9 @@
 		84C5B0E22965CDC300716565 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				846939012968892300AFEC12 /* Model */,
+				846939002968890D00AFEC12 /* View */,
 				84C5B0E42965CDFB00716565 /* App */,
-				84C5B0D22965C89400716565 /* ViewController.swift */,
-				84C5B0E82965DD1200716565 /* Model.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
