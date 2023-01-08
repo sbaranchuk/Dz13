@@ -35,6 +35,7 @@ class IndicatorRightTableViewCell: UITableViewCell {
 
     private lazy var indicatorImage: UIImageView = {
         let indicatorImage = UIImageView()
+        indicatorImage.tintColor = UIColor.systemRed
         return indicatorImage
     }()
 
@@ -72,8 +73,9 @@ class IndicatorRightTableViewCell: UITableViewCell {
         }
 
         indicatorImage.snp.makeConstraints { make in
-            make.right.equalTo(contentView).offset(-10)
+            make.right.equalTo(contentView).offset(-15)
             make.centerY.equalTo(contentView)
+            make.height.width.equalTo(30)
         }
     }
 

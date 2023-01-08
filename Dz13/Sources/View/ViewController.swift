@@ -66,11 +66,46 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorRightCell", for: indexPath) as? IndicatorRightTableViewCell
-        cell?.cells = cells?[indexPath.section][indexPath.row]
-        cell?.accessoryType = .none
-        cell?.separatorInset.left = 62
-        return cell ?? UITableViewCell()
+
+        let typeCell = cells?[indexPath.section][indexPath.row].type
+
+        switch typeCell {
+
+        case .some(.ordinary):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ordinaryCell", for: indexPath) as? OrdinaryTableViewCell
+            cell?.cells = cells?[indexPath.section][indexPath.row]
+            cell?.accessoryType = .disclosureIndicator
+            cell?.separatorInset.left = 60
+            return cell ?? UITableViewCell()
+
+        case .some(.withSwitch):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as? SwitchTableViewCell
+            cell?.cells = cells?[indexPath.section][indexPath.row]
+            cell?.accessoryType = .none
+            cell?.separatorInset.left = 60
+            return cell ?? UITableViewCell()
+
+        case .some(.withTextRight):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "rightTextCell", for: indexPath) as? RightTextTableViewCell
+            cell?.cells = cells?[indexPath.section][indexPath.row]
+            cell?.accessoryType = .disclosureIndicator
+            cell?.separatorInset.left = 60
+            return cell ?? UITableViewCell()
+
+        case .some(.withIndicatorRight):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorRightCell", for: indexPath) as? IndicatorRightTableViewCell
+            cell?.cells = cells?[indexPath.section][indexPath.row]
+            cell?.accessoryType = .disclosureIndicator
+            cell?.separatorInset.left = 60
+            return cell ?? UITableViewCell()
+            
+        case .none:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ordinaryCell", for: indexPath) as? OrdinaryTableViewCell
+            cell?.cells = cells?[indexPath.section][indexPath.row]
+            cell?.accessoryType = .disclosureIndicator
+            cell?.separatorInset.left = 60
+            return cell ?? UITableViewCell()
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

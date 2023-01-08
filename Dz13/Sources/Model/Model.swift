@@ -27,7 +27,7 @@ extension CellConntent {
     static var cells: [[CellConntent]] = [
         [
             CellConntent(image: UIImage(systemName: "airplane.circle.fill")!, imageColor: UIColor.systemOrange, title: "Авиарежим", textRight: "", indicatorRight: nil, type: .withSwitch),
-            CellConntent(image: UIImage(systemName: "wifi.square.fill")!, imageColor: UIColor.systemBlue, title: "Wi-Fi", textRight: "Не подключено", indicatorRight: nil, type: .withIndicatorRight),
+            CellConntent(image: UIImage(systemName: "wifi.square.fill")!, imageColor: UIColor.systemBlue, title: "Wi-Fi", textRight: "Не подключено", indicatorRight: nil, type: .withTextRight),
             CellConntent(image: UIImage(systemName: "b.square.fill")!, imageColor: UIColor.systemBlue, title: "Bluetooth", textRight: "Вкл.", indicatorRight: nil, type: .withTextRight),
             CellConntent(image: UIImage(systemName: "antenna.radiowaves.left.and.right.circle.fill")!, imageColor: UIColor.systemGreen, title: "Сотовая связь", textRight: "", indicatorRight: nil, type: .ordinary),
             CellConntent(image: UIImage(systemName: "personalhotspot.circle.fill")!, imageColor: UIColor.systemGreen, title: "Режим модема", textRight: "", indicatorRight: nil, type: .ordinary),
