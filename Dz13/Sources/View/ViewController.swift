@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(OrdinaryTableViewCell.self, forCellReuseIdentifier: "ordinaryCell")
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -59,12 +59,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = cells?[indexPath.section][indexPath.row].title
-        cell.imageView?.image = cells?[indexPath.section][indexPath.row].image
-        cell.accessoryType = .disclosureIndicator
-        // добавить цвета иконок в модель и тут
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ordinaryCell", for: indexPath) as? OrdinaryTableViewCell
+        cell?.cells = cells?[indexPath.section][indexPath.row]
+        cell?.accessoryType = .disclosureIndicator
+        cell?.separatorInset.left = 65
+        return cell ?? UITableViewCell()
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
