@@ -75,35 +75,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let cell = tableView.dequeueReusableCell(withIdentifier: "ordinaryCell", for: indexPath) as? OrdinaryTableViewCell
             cell?.cells = cells?[indexPath.section][indexPath.row]
             cell?.accessoryType = .disclosureIndicator
-            cell?.separatorInset.left = 60
+            cell?.separatorInset.left = 57
             return cell ?? UITableViewCell()
 
         case .some(.withSwitch):
             let cell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as? SwitchTableViewCell
             cell?.cells = cells?[indexPath.section][indexPath.row]
             cell?.accessoryType = .none
-            cell?.separatorInset.left = 60
+            cell?.separatorInset.left = 57
             return cell ?? UITableViewCell()
 
         case .some(.withTextRight):
             let cell = tableView.dequeueReusableCell(withIdentifier: "rightTextCell", for: indexPath) as? RightTextTableViewCell
             cell?.cells = cells?[indexPath.section][indexPath.row]
             cell?.accessoryType = .disclosureIndicator
-            cell?.separatorInset.left = 60
+            cell?.separatorInset.left = 57
             return cell ?? UITableViewCell()
 
         case .some(.withIndicatorRight):
             let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorRightCell", for: indexPath) as? IndicatorRightTableViewCell
             cell?.cells = cells?[indexPath.section][indexPath.row]
             cell?.accessoryType = .disclosureIndicator
-            cell?.separatorInset.left = 60
+            cell?.separatorInset.left = 57
             return cell ?? UITableViewCell()
             
         case .none:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ordinaryCell", for: indexPath) as? OrdinaryTableViewCell
             cell?.cells = cells?[indexPath.section][indexPath.row]
             cell?.accessoryType = .disclosureIndicator
-            cell?.separatorInset.left = 60
+            cell?.separatorInset.left = 57
             return cell ?? UITableViewCell()
         }
     }

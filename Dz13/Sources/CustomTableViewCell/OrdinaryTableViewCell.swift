@@ -28,6 +28,7 @@ class OrdinaryTableViewCell: UITableViewCell {
 
     private lazy var titleLable: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.font = sizeFontInCell
         return titleLabel
     }()
 
@@ -55,7 +56,7 @@ class OrdinaryTableViewCell: UITableViewCell {
         cellImage.snp.makeConstraints { make in
             make.left.equalTo(contentView).offset(10)
             make.centerY.equalTo(contentView)
-            make.width.height.equalTo(35)
+            make.width.height.equalTo(sizeIcon)
         }
 
         titleLable.snp.makeConstraints { make in

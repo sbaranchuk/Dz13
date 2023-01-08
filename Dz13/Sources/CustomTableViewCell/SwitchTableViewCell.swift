@@ -29,6 +29,7 @@ class SwitchTableViewCell: UITableViewCell {
 
     private lazy var titleLable: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.font = sizeFontInCell
         return titleLabel
     }()
 
@@ -64,7 +65,7 @@ class SwitchTableViewCell: UITableViewCell {
         cellImage.snp.makeConstraints { make in
             make.left.equalTo(contentView).offset(10)
             make.centerY.equalTo(contentView)
-            make.width.height.equalTo(40)
+            make.width.height.equalTo(sizeIcon)
         }
 
         titleLable.snp.makeConstraints { make in
@@ -73,7 +74,7 @@ class SwitchTableViewCell: UITableViewCell {
         }
 
         rightSwitch.snp.makeConstraints { make in
-            make.right.equalTo(contentView).offset(-10)
+            make.right.equalTo(contentView).offset(-20)
             make.centerY.equalTo(contentView)
         }
     }

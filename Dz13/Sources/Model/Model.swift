@@ -7,6 +7,9 @@
 
 import UIKit
 
+let sizeIcon = 35
+let sizeFontInCell = UIFont.systemFont(ofSize: 16, weight: .regular)
+
 enum TypeCell: String {
     case withSwitch = "withSwitch"
     case withTextRight = "withTextRight"
