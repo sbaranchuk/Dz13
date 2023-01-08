@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.register(OrdinaryTableViewCell.self, forCellReuseIdentifier: "ordinaryCell")
         tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: "switchCell")
         tableView.register(RightTextTableViewCell.self, forCellReuseIdentifier: "rightTextCell")
+        tableView.register(IndicatorRightTableViewCell.self, forCellReuseIdentifier: "indicatorRightCell")
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -65,7 +66,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "rightTextCell", for: indexPath) as? RightTextTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorRightCell", for: indexPath) as? IndicatorRightTableViewCell
         cell?.cells = cells?[indexPath.section][indexPath.row]
         cell?.accessoryType = .none
         cell?.separatorInset.left = 62

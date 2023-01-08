@@ -27,7 +27,7 @@ extension CellConntent {
     static var cells: [[CellConntent]] = [
         [
             CellConntent(image: UIImage(systemName: "airplane.circle.fill")!, imageColor: UIColor.systemOrange, title: "Авиарежим", textRight: "", indicatorRight: nil, type: .withSwitch),
-            CellConntent(image: UIImage(systemName: "wifi.square.fill")!, imageColor: UIColor.systemBlue, title: "Wi-Fi", textRight: "Не подключено", indicatorRight: UIImage(systemName: "1.circle.fill")!, type: .withIndicatorRight),
+            CellConntent(image: UIImage(systemName: "wifi.square.fill")!, imageColor: UIColor.systemBlue, title: "Wi-Fi", textRight: "Не подключено", indicatorRight: nil, type: .withIndicatorRight),
             CellConntent(image: UIImage(systemName: "b.square.fill")!, imageColor: UIColor.systemBlue, title: "Bluetooth", textRight: "Вкл.", indicatorRight: nil, type: .withTextRight),
             CellConntent(image: UIImage(systemName: "antenna.radiowaves.left.and.right.circle.fill")!, imageColor: UIColor.systemGreen, title: "Сотовая связь", textRight: "", indicatorRight: nil, type: .ordinary),
             CellConntent(image: UIImage(systemName: "personalhotspot.circle.fill")!, imageColor: UIColor.systemGreen, title: "Режим модема", textRight: "", indicatorRight: nil, type: .ordinary),
@@ -35,7 +35,7 @@ extension CellConntent {
         ],
         [
             CellConntent(image: UIImage(systemName: "bell.square.fill")!, imageColor: UIColor.systemRed, title: "Уведомления", textRight: "", indicatorRight: nil, type: .ordinary),
-            CellConntent(image: UIImage(systemName: "speaker.circle")!, imageColor: UIColor.systemRed, title: "Звуки, тактильные сигналы", textRight: "", indicatorRight: UIImage(systemName: "1.circle.fill")!, type: .ordinary),
+            CellConntent(image: UIImage(systemName: "speaker.circle")!, imageColor: UIColor.systemRed, title: "Звуки, тактильные сигналы", textRight: "", indicatorRight: nil, type: .ordinary),
             CellConntent(image: UIImage(systemName: "moon.fill")!, imageColor: UIColor.systemPurple, title: "Не беспокоить", textRight: "", indicatorRight: nil, type: .ordinary),
             CellConntent(image: UIImage(systemName: "hourglass.circle.fill")!, imageColor: UIColor.systemPurple, title: "Экранное время", textRight: "", indicatorRight: nil, type: .ordinary)
         ],
