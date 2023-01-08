@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84693904296B199F00AFEC12 /* OrdinaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84693903296B199F00AFEC12 /* OrdinaryTableViewCell.swift */; };
+		84693906296B2D8E00AFEC12 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84693905296B2D8E00AFEC12 /* SwitchTableViewCell.swift */; };
 		84C5B0CF2965C89400716565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5B0CE2965C89400716565 /* AppDelegate.swift */; };
 		84C5B0D12965C89400716565 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5B0D02965C89400716565 /* SceneDelegate.swift */; };
 		84C5B0D32965C89400716565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5B0D22965C89400716565 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		84693903296B199F00AFEC12 /* OrdinaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdinaryTableViewCell.swift; sourceTree = "<group>"; };
+		84693905296B2D8E00AFEC12 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		84C5B0CB2965C89400716565 /* Dz13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dz13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5B0CE2965C89400716565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5B0D02965C89400716565 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				84693903296B199F00AFEC12 /* OrdinaryTableViewCell.swift */,
+				84693905296B2D8E00AFEC12 /* SwitchTableViewCell.swift */,
 			);
 			path = CustomTableViewCell;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				84C5B0D12965C89400716565 /* SceneDelegate.swift in Sources */,
 				84C5B0E92965DD1200716565 /* Model.swift in Sources */,
 				84693904296B199F00AFEC12 /* OrdinaryTableViewCell.swift in Sources */,
+				84693906296B2D8E00AFEC12 /* SwitchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

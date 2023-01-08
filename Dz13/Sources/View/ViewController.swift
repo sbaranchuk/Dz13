@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(OrdinaryTableViewCell.self, forCellReuseIdentifier: "ordinaryCell")
+        tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: "switchCell")
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -58,11 +59,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cells?[section].count ?? 0
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        45
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ordinaryCell", for: indexPath) as? OrdinaryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as? SwitchTableViewCell
         cell?.cells = cells?[indexPath.section][indexPath.row]
-        cell?.accessoryType = .disclosureIndicator
-        cell?.separatorInset.left = 65
+        cell?.accessoryType = .none
+        cell?.separatorInset.left = 62
         return cell ?? UITableViewCell()
     }
 

@@ -1,13 +1,14 @@
 //
-//  Ordinary.swift
+//  SwitchTableViewCell.swift
 //  Dz13
 //
 //  Created by Admin on 08/01/2023.
 //
 
 import UIKit
+import SnapKit
 
-class OrdinaryTableViewCell: UITableViewCell {
+class SwitchTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
@@ -31,6 +32,12 @@ class OrdinaryTableViewCell: UITableViewCell {
         return titleLabel
     }()
 
+    private lazy var rightSwitch: UISwitch = {
+        let rightSwitch = UISwitch()
+        rightSwitch.isOn = false
+        return rightSwitch
+    }()
+
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -46,8 +53,10 @@ class OrdinaryTableViewCell: UITableViewCell {
     // MARK: - Setups
 
     func setupHierarchy() {
+
         contentView.addSubview(titleLable)
         contentView.addSubview(cellImage)
+        contentView.addSubview(rightSwitch)
     }
 
     func setupLayout() {
@@ -55,12 +64,17 @@ class OrdinaryTableViewCell: UITableViewCell {
         cellImage.snp.makeConstraints { make in
             make.left.equalTo(contentView).offset(10)
             make.centerY.equalTo(contentView)
-            make.width.height.equalTo(35)
+            make.width.height.equalTo(40)
         }
 
         titleLable.snp.makeConstraints { make in
             make.centerY.equalTo(cellImage)
             make.left.equalTo(cellImage.snp.right).offset(10)
+        }
+
+        rightSwitch.snp.makeConstraints { make in
+            make.right.equalTo(contentView).offset(-10)
+            make.centerY.equalTo(contentView)
         }
     }
 
