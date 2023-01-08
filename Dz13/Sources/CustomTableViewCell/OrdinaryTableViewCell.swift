@@ -67,4 +67,10 @@ class OrdinaryTableViewCell: UITableViewCell {
 
     // MARK: - Reuse
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.accessoryType = .none
+        self.cells = nil
+    }
+
 }
