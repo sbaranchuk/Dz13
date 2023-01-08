@@ -34,8 +34,9 @@ extension CellConntent {
         ],
         [
             CellConntent(image: UIImage(systemName: "bell.square.fill")!, title: "Уведомления", textRight: "", indicatorRight: nil, type: .ordinary),
-            CellConntent(image: UIImage(systemName: "speaker.square.fill")!, title: "Звуки, тактильные сигналы", textRight: "", indicatorRight: UIImage(systemName: "1.circle.fill")!, type: .ordinary),
-            CellConntent(image: UIImage(named: "hourglass.circle.fill")!, title: "Экранное время", textRight: "", indicatorRight: nil, type: .ordinary)
+            CellConntent(image: UIImage(systemName: "speaker.circle")!, title: "Звуки, тактильные сигналы", textRight: "", indicatorRight: UIImage(systemName: "1.circle.fill")!, type: .ordinary),
+            CellConntent(image: UIImage(systemName: "moon.fill")!, title: "Не беспокоить", textRight: "", indicatorRight: nil, type: .ordinary),
+            CellConntent(image: UIImage(systemName: "hourglass.circle.fill")!, title: "Экранное время", textRight: "", indicatorRight: nil, type: .ordinary)
         ],
         [
             CellConntent(image: UIImage(systemName: "gear.circle")!, title: "Основные", textRight: "", indicatorRight: UIImage(systemName: "1.circle.fill"), type: .withIndicatorRight),
