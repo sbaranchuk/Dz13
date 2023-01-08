@@ -30,6 +30,7 @@ class IndicatorRightTableViewCell: UITableViewCell {
 
     private lazy var titleLable: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.font = sizeFontInCell
         return titleLabel
     }()
 
@@ -64,7 +65,7 @@ class IndicatorRightTableViewCell: UITableViewCell {
         cellImage.snp.makeConstraints { make in
             make.left.equalTo(contentView).offset(10)
             make.centerY.equalTo(contentView)
-            make.width.height.equalTo(40)
+            make.width.height.equalTo(sizeIcon)
         }
 
         titleLable.snp.makeConstraints { make in
