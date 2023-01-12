@@ -83,5 +83,4 @@ class DetailViewController: UIViewController {
             make.centerY.centerX.equalTo(view)
         }
     }
-
 }

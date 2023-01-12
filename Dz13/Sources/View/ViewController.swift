@@ -114,6 +114,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         viewController.info = cells?[indexPath.section][indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
-
 }
 
