@@ -29,7 +29,7 @@ class SwitchTableViewCell: UITableViewCell {
 
     private lazy var titleLable: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.font = sizeFontInCell
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         return titleLabel
     }()
 
@@ -86,5 +86,4 @@ class SwitchTableViewCell: UITableViewCell {
         self.accessoryType = .none
         self.cells = nil
     }
-
 }
