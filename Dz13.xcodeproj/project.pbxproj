@@ -52,8 +52,8 @@
 		846939002968890D00AFEC12 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				84C5B0D22965C89400716565 /* ViewController.swift */,
 				8469390D296B488F00AFEC12 /* DetailView.swift */,
+				84DEFFF229E31EC40038E32E /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -64,17 +64,6 @@
 				84C5B0E82965DD1200716565 /* Model.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		84693902296B194600AFEC12 /* CustomTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				84693903296B199F00AFEC12 /* OrdinaryTableViewCell.swift */,
-				84693905296B2D8E00AFEC12 /* SwitchTableViewCell.swift */,
-				84693909296B3C1F00AFEC12 /* RightTextTableViewCell.swift */,
-				8469390B296B3D3D00AFEC12 /* IndicatorRightTableViewCell.swift */,
-			);
-			path = CustomTableViewCell;
 			sourceTree = "<group>";
 		};
 		84C5B0C22965C89400716565 = {
@@ -105,7 +94,7 @@
 		84C5B0E22965CDC300716565 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				84693902296B194600AFEC12 /* CustomTableViewCell */,
+				84DEFFF129E31E750038E32E /* Controller */,
 				846939012968892300AFEC12 /* Model */,
 				846939002968890D00AFEC12 /* View */,
 				84C5B0E42965CDFB00716565 /* App */,
@@ -130,6 +119,25 @@
 				84C5B0D02965C89400716565 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		84DEFFF129E31E750038E32E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84C5B0D22965C89400716565 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84DEFFF229E31EC40038E32E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84693903296B199F00AFEC12 /* OrdinaryTableViewCell.swift */,
+				84693905296B2D8E00AFEC12 /* SwitchTableViewCell.swift */,
+				84693909296B3C1F00AFEC12 /* RightTextTableViewCell.swift */,
+				8469390B296B3D3D00AFEC12 /* IndicatorRightTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
