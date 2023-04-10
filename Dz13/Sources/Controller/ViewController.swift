@@ -8,111 +8,34 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
 
-    // MARK: - Properties
+    // MARK: - Private properties
 
-    private var cells: [[CellConntent]]?
+    private var model: Model?
 
-    // MARK: - UIElements
-
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(OrdinaryTableViewCell.self, forCellReuseIdentifier: "ordinaryCell")
-        tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: "switchCell")
-        tableView.register(RightTextTableViewCell.self, forCellReuseIdentifier: "rightTextCell")
-        tableView.register(IndicatorRightTableViewCell.self, forCellReuseIdentifier: "indicatorRightCell")
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }()
+    private var settingsView: SettingsView? {
+        guard isViewLoaded else { return nil }
+        return view as? SettingsView
+    }
 
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view = SettingsView()
+        model = Model()
         title = "Настройки"
-        setupHierarchy()
-        setupLayout()
-        cells = CellConntent.cells
+        configureView()
     }
+}
 
-    // MARK: - Setups
+// MARK: - Extensions
 
-    func setupHierarchy() {
-        view.addSubview(tableView)
-    }
-
-    func setupLayout() {
-
-        tableView.snp.makeConstraints { make in
-            make.left.top.right.bottom.equalTo(view)
-        }
-    }
-
-    // MARK: - Actions
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return cells?.count ?? 0
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells?[section].count ?? 0
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        45
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let typeCell = cells?[indexPath.section][indexPath.row].type
-
-        switch typeCell {
-
-        case .some(.ordinary):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ordinaryCell", for: indexPath) as? OrdinaryTableViewCell
-            cell?.cells = cells?[indexPath.section][indexPath.row]
-            cell?.accessoryType = .disclosureIndicator
-            cell?.separatorInset.left = 57
-            return cell ?? UITableViewCell()
-
-        case .some(.withSwitch):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as? SwitchTableViewCell
-            cell?.cells = cells?[indexPath.section][indexPath.row]
-            cell?.accessoryType = .none
-            cell?.separatorInset.left = 57
-            return cell ?? UITableViewCell()
-
-        case .some(.withTextRight):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "rightTextCell", for: indexPath) as? RightTextTableViewCell
-            cell?.cells = cells?[indexPath.section][indexPath.row]
-            cell?.accessoryType = .disclosureIndicator
-            cell?.separatorInset.left = 57
-            return cell ?? UITableViewCell()
-
-        case .some(.withIndicatorRight):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "indicatorRightCell", for: indexPath) as? IndicatorRightTableViewCell
-            cell?.cells = cells?[indexPath.section][indexPath.row]
-            cell?.accessoryType = .disclosureIndicator
-            cell?.separatorInset.left = 57
-            return cell ?? UITableViewCell()
-            
-        case .none:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ordinaryCell", for: indexPath) as? OrdinaryTableViewCell
-            cell?.cells = cells?[indexPath.section][indexPath.row]
-            cell?.accessoryType = .disclosureIndicator
-            cell?.separatorInset.left = 57
-            return cell ?? UITableViewCell()
-        }
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = DetailViewController()
-        tableView.deselectRow(at: indexPath, animated: true)
-        viewController.info = cells?[indexPath.section][indexPath.row]
-        navigationController?.pushViewController(viewController, animated: true)
+private extension ViewController {
+    func configureView() {
+        guard let models = model?.createCells() else { return }
+        settingsView?.configureView(with: models)
     }
 }
 

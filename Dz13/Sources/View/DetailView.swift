@@ -10,7 +10,7 @@ import SnapKit
 
 class DetailViewController: UIViewController {
 
-    var info: CellConntent? {
+    var info: Cell? {
         didSet {
             imageView.image = info?.image
             imageView.tintColor = info?.imageColor

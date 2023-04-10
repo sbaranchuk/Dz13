@@ -12,7 +12,7 @@ class IndicatorRightTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
-    var cells: CellConntent? {
+    var cells: Cell? {
         didSet {
             cellImage.image = cells?.image
             cellImage.tintColor = cells?.imageColor
@@ -65,7 +65,7 @@ class IndicatorRightTableViewCell: UITableViewCell {
         cellImage.snp.makeConstraints { make in
             make.left.equalTo(contentView).offset(10)
             make.centerY.equalTo(contentView)
-            make.width.height.equalTo(sizeIcon)
+            make.width.height.equalTo(35)
         }
 
         titleLable.snp.makeConstraints { make in
