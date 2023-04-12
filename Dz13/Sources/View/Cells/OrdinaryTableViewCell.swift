@@ -1,23 +1,21 @@
 //
-//  IndicatorRightTableViewCell.swift
+//  Ordinary.swift
 //  Dz13
 //
 //  Created by Admin on 08/01/2023.
 //
 
 import UIKit
-import SnapKit
 
-class IndicatorRightTableViewCell: UITableViewCell {
+class OrdinaryTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
-    var cells: CellConntent? {
+    var cells: Cell? {
         didSet {
-            cellImage.image = cells?.image
+            cellImage.image = UIImage(systemName: cells?.image ?? ".remove")
             cellImage.tintColor = cells?.imageColor
             titleLable.text = cells?.title
-            indicatorImage.image = cells?.indicatorRight
         }
     }
 
@@ -32,12 +30,6 @@ class IndicatorRightTableViewCell: UITableViewCell {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         return titleLabel
-    }()
-
-    private lazy var indicatorImage: UIImageView = {
-        let indicatorImage = UIImageView()
-        indicatorImage.tintColor = UIColor.systemRed
-        return indicatorImage
     }()
 
     // MARK: - Initializers
@@ -57,7 +49,6 @@ class IndicatorRightTableViewCell: UITableViewCell {
     func setupHierarchy() {
         contentView.addSubview(titleLable)
         contentView.addSubview(cellImage)
-        contentView.addSubview(indicatorImage)
     }
 
     func setupLayout() {
@@ -65,18 +56,12 @@ class IndicatorRightTableViewCell: UITableViewCell {
         cellImage.snp.makeConstraints { make in
             make.left.equalTo(contentView).offset(10)
             make.centerY.equalTo(contentView)
-            make.width.height.equalTo(sizeIcon)
+            make.width.height.equalTo(35)
         }
 
         titleLable.snp.makeConstraints { make in
             make.centerY.equalTo(cellImage)
             make.left.equalTo(cellImage.snp.right).offset(10)
-        }
-
-        indicatorImage.snp.makeConstraints { make in
-            make.right.equalTo(contentView).offset(-15)
-            make.centerY.equalTo(contentView)
-            make.height.width.equalTo(30)
         }
     }
 

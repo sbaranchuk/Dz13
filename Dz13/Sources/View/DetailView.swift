@@ -8,18 +8,7 @@
 import UIKit
 import SnapKit
 
-class DetailViewController: UIViewController {
-
-    var info: CellConntent? {
-        didSet {
-            imageView.image = info?.image
-            imageView.tintColor = info?.imageColor
-            titleLabel.text = "Раздел: \(info?.title ?? "")"
-            textRightLabel.text = "Текст в правой части ячейки: \(info?.textRight ?? "отсутствует")"
-            indicatorImage.image = info?.indicatorRight ?? UIImage(systemName: "multiply")
-            typeCellLabel.text = "Тип ячейки: \(info?.type.rawValue ?? "")"
-        }
-    }
+final class DetailView: UIView {
 
     // MARK: - Outlets
 
@@ -48,7 +37,7 @@ class DetailViewController: UIViewController {
         return typeCellLabel
     }()
 
-    private let stack: UIStackView = {
+    private lazy var stack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.distribution = .fill
@@ -57,20 +46,33 @@ class DetailViewController: UIViewController {
         return stack
     }()
 
-    // MARK: - Lifecycle
+    // MARK: - Initial
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGray6
-        title = info?.title
+    init() {
+        super.init(frame: .zero)
+        commonInit()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+
+    init(with cell: Cell) {
+        super.init(frame: .zero)
+        commonInit()
+        configureView(with: cell)
+    }
+
+    private func commonInit() {
         setupHierarchy()
         setupLayout()
     }
 
     // MARK: - Setup
-
+    
     private func setupHierarchy() {
-        view.addSubview(stack)
+        addSubview(stack)
         stack.addArrangedSubview(imageView)
         stack.addArrangedSubview(titleLabel)
         stack.addArrangedSubview(textRightLabel)
@@ -80,7 +82,16 @@ class DetailViewController: UIViewController {
 
     private func setupLayout() {
         stack.snp.makeConstraints { make in
-            make.centerY.centerX.equalTo(view)
+            make.centerY.centerX.equalToSuperview()
         }
+    }
+
+    func configureView(with cell: Cell) {
+        imageView.image = UIImage(systemName: cell.image)
+        imageView.tintColor = cell.imageColor
+        titleLabel.text = "Раздел: \(cell.title)"
+        textRightLabel.text = "Текст в правой части ячейки: \(cell.textRight ?? "отсутствует")"
+        indicatorImage.image = UIImage(systemName: cell.indicatorRight ?? ".remove")
+        typeCellLabel.text = "Тип ячейки: \(cell.type.rawValue)"
     }
 }
