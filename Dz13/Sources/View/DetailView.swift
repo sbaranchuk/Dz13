@@ -87,11 +87,11 @@ final class DetailView: UIView {
     }
 
     func configureView(with cell: Cell) {
-        imageView.image = cell.image
+        imageView.image = UIImage(systemName: cell.image)
         imageView.tintColor = cell.imageColor
         titleLabel.text = "Раздел: \(cell.title)"
         textRightLabel.text = "Текст в правой части ячейки: \(cell.textRight ?? "отсутствует")"
-        indicatorImage.image = cell.indicatorRight ?? UIImage(systemName: "multiply")
+        indicatorImage.image = UIImage(systemName: cell.indicatorRight ?? ".remove")
         typeCellLabel.text = "Тип ячейки: \(cell.type.rawValue)"
     }
 }

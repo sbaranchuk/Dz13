@@ -8,11 +8,11 @@
 import UIKit
 
 struct Cell: Hashable {
-    let image: UIImage
+    let image: String
     let imageColor: UIColor
     let title: String
     let textRight: String?
-    let indicatorRight: UIImage?
+    let indicatorRight: String?
     let type: TypeCell
 }
 

@@ -14,7 +14,7 @@ class SwitchTableViewCell: UITableViewCell {
 
     var cells: Cell? {
         didSet {
-            cellImage.image = cells?.image
+            cellImage.image = UIImage(systemName: cells?.image ?? ".remove")
             cellImage.tintColor = cells?.imageColor
             titleLable.text = cells?.title
         }

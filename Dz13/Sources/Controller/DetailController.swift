@@ -12,7 +12,7 @@ final class DetailController: UIViewController {
     // MARK: - Properties
 
     private var model: Model?
-    var cell = Cell(image: UIImage(systemName: "airplane.circle.fill") ?? .remove, imageColor: UIColor.systemOrange, title: "Авиарежим", textRight: "", indicatorRight: nil, type: .withSwitch)
+    var cell = Cell(image: "airplane.circle.fill", imageColor: UIColor.systemOrange, title: "Авиарежим", textRight: "", indicatorRight: nil, type: .withSwitch)
 
     private var detailView: DetailView? {
         guard isViewLoaded else { return nil }
