@@ -28,6 +28,3 @@ final class DetailController: UIViewController {
         view.backgroundColor = .white
     }
 }
-
-
-
